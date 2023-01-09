@@ -13,7 +13,10 @@ it('Ajouter une tâche', ()=>{
     // When je clique sur le rond
     cy.get('.toggle')
     .first()
-    .click() 
+    .click({force:true}) 
+    cy.get('.toggle')
+    .first()
+    .screenshot()
     // Then la tâche est complétée
     cy.get('.toggle')
     .first()
@@ -30,7 +33,7 @@ it('Ajouter une tâche', ()=>{
 
     var maliste = ['a','b','c']
 
-    for (elementListe=maliste.length; elementListe>=1; elementListe--){
+    for (let elementListe=maliste.length; elementListe>=1; elementListe--){
 
     }
 
