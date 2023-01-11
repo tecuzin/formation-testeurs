@@ -1,6 +1,9 @@
 /// <reference types="cypress" />
 
-const USER = require('../../fixtures/users.json')
+//import '../ActorAction/User';
+
+//const USER = require('../../fixtures/users.json')
+//const user = require('../ActorAction/User');
 
 context('Application IsaFideliTest', () => {
 
@@ -12,37 +15,18 @@ context('Application IsaFideliTest', () => {
     describe('Login to the app', () => {
 
         it.only('As a user \n I can create an account', () => {
-            cy.accederAuFormulaireInscription()
-            rempliFormulaireInscription()
-            sauverDonneesSession()
+            user.gotoTheApp();
+            user.register();
+            user.addTickets(3);
 
-            function sauverDonneesSession() {
-                /* cy
-                    .writeFile(
-                        'userdata.json',
-                        window.localStorage
-                            .getItem('isafidelitest_compte')
-                    ) */
-            }
+            user.gotoTheApp();
+            user.addTickets(3);
+            user.listTickets();
+            user.removeTicket(user.listTickets().first())
 
-            function accederAuFormulaireInscription() {
-                cy
-                    .get('.mat-card-actions > .mat-focus-indicator')
-                    .click()
-            }
+            user.creeUnCompte()
 
-            function rempliFormulaireInscription() {
-                cy.get('[formcontrolname="nom"]').type(USER[0].name)
-                cy.get('[formcontrolname="prenom"]').type(USER[0].username)
-                cy.get('[formcontrolname="adresse"]').type(USER[0].address.street)
-                cy.get('[formcontrolname="codePostal"]').type(USER[0].address.zipcode)
-                cy.get('[formcontrolname="ville"]').type(USER[0].address.city)
-                cy.get('[formcontrolname="email"]').type(USER[0].email)
-                cy.get('[formcontrolname="dateNaissance"]').type('01012022')
-                cy.get('[formcontrolname="numeroCarteFidelite"]').type(USER[0].username)
-                cy.get('#mat-slide-toggle-1-input').click({ force: true })
-                cy.contains('Enregistrer').click()
-            }
+
         })
 
         it('As a user \n I can connect to the app', () => {
