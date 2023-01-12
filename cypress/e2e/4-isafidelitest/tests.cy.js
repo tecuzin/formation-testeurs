@@ -5,6 +5,8 @@
 //const USER = require('../../fixtures/users.json')
 //const user = require('../ActorAction/User');
 
+import User from "./ActorAction/User";
+
 context('Application IsaFideliTest', () => {
 
     beforeEach(() => {
@@ -15,16 +17,16 @@ context('Application IsaFideliTest', () => {
     describe('Login to the app', () => {
 
         it.only('As a user \n I can create an account', () => {
-            user.gotoTheApp();
-            user.register();
-            user.addTickets(3);
+            User.goToTheApp();
+            User.register();
+            User.addTickets(3);
 
-            user.gotoTheApp();
-            user.addTickets(3);
-            user.listTickets();
-            user.removeTicket(user.listTickets().first())
+            User.gotoTheApp();
+            User.addTickets(3);
+            User.listTickets();
+            User.removeTicket(user.listTickets().first())
 
-            user.creeUnCompte()
+            User.creeUnCompte()
 
 
         })

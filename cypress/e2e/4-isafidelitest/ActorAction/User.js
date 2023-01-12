@@ -1,18 +1,35 @@
- class User {
+const boutonInscription = '.mat-card-actions > .mat-focus-indicator';
+
+import AbstractPage from './AbstractPage';
+import './AbstractPage';
+class User extends AbstractPage {
+
+    rue_utilisateur1 = adresses.adresses.utilisateur1.rue
+    test = adresses.listeDeCles[0];
+    cle5 = adresses.listeDeCles[2].key4.key5;
+
+    listerAdresses() {
+        toutesAdresses = adresses.adresses
+        toutesAdresses.array.forEach(adresse => {
+            rue = adresse.rue
+            cp = adresse.cp
+            ville = adresse.ville
+        });
+    }
 
     role;
     nom;
     prenom;
 
-    seConnecte(){}
-    seDeconnecte(){}
-    register(){
+    seConnecte() { }
+    seDeconnecte() { }
+    register() {
 
     }
-    listeTickets(){
+    listeTickets() {
         return listeDesTickets
     }
-    removeTicket(ticketASupprimer){}
+    removeTicket(ticketASupprimer) { }
 
     creeUnCompte() {
         cy.accederAuFormulaireInscription()
@@ -30,8 +47,9 @@
     }
 
     accederAuFormulaireInscription() {
+
         cy
-            .get('.mat-card-actions > .mat-focus-indicator')
+            .get(boutonInscription)
             .click()
     }
 
@@ -48,4 +66,13 @@
         cy.contains('Enregistrer').click()
     }
 
+    addTickets() { }
+
+    goToTheApp() {
+
+    }
+
+    register() {
+
+    }
 } export default User

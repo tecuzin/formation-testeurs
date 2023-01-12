@@ -1,0 +1,37 @@
+{
+    "key": "value",
+    "key2": "value",
+    "listeDeCles": [
+        "value",
+        "value2",
+        {
+            "key3": "value",
+            "key4": {
+                "key4": "value",
+                "key5": "value"
+            }
+        }
+    ],
+    "adresses": {
+        "utilisateur1": {
+            "rue": "rue",
+            "cp": "cp",
+            "ville": "ville"
+        },
+        "utilisateur2": {
+            "rue": "rue",
+            "cp": "cp",
+            "ville": "ville"
+        },
+        "utilisateur3": {
+            "rue": "rue",
+            "cp": "cp",
+            "ville": "ville"
+        },
+        "utilisateur4": {
+            "rue": "rue",
+            "cp": "cp",
+            "ville": "ville"
+        }
+    }
+}
